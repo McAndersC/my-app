@@ -1,10 +1,15 @@
 import Navigation from '../Navigation/Navigation';
 import footerStyles from './footer.module.css';
-export default function Footer() {
+import Link from "next/link"
+export default function Footer({data}) {
     return (
         <div className={footerStyles.container}>
            Footer
-           <Navigation />
+           <ul>
+           { data?.map(link => <li key={link.title}>
+                <Link href={link.path}>{link.title}</Link>
+            </li>)}
+           </ul>
         </div>
     )
   }
