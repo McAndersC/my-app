@@ -1,9 +1,11 @@
 'use client'
 import Link from "next/link"
 import styles from "./navigation.module.css"
-import { Oswald, JetBrains_Mono } from 'next/font/google';
+import { Oswald } from 'next/font/google';
 import { useState } from "react";
-
+import { FaAnchor, FaAngry } from "react-icons/fa";
+import { FcCloseUpMode } from "react-icons/fc";
+import { AiFillAlert } from "react-icons/ai";
  
 const oswaldFont = Oswald({
   weight: '400',
@@ -24,7 +26,12 @@ export default function Navigation({data, show}) {
           { data?.map(link => <Link key={link.title} href={link.path}>{link.title}</Link>)}
 
           {<div className={styles.burger} onClick={() => setShowPane(!showPane)}>
-              showPane er lig med {showPane.toString()}
+          
+          
+          {showPane ? <FaAnchor /> : <FaAngry />  }
+          
+       
+          {/* showPane er lig med {showPane.toString()} */}
           </div>}
         
           {showPane ? 

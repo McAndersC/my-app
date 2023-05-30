@@ -23,6 +23,10 @@
 .burger {
     background-color: black;
     color: white;
-    width: 150px;
-    height: 150px;
+    position: absolute;
+    top: 0;
+    right : 0;
+    z-index: 1000;
+    font-size: 36px;
+    color: red;
 }
